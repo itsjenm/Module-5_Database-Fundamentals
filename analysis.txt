@@ -1,0 +1,11 @@
+Comprehensive Analysis
+The "BookHaven" database schema was designed with normalization principles in mind:
+
+1NF Compliance: 
+All tables have atomic columns. For example, the Books table has separate columns for title, publication_date, and isbn.
+
+2NF Compliance: 
+Each non-primary-key column is fully dependent on the table's primary key. For instance, in the Transactions table, transaction_date depends on transaction_id.
+
+3NF Compliance: 
+There are no transitive dependencies. For example, in the Authors table, first_name and last_name depend solely on author_id, not on each other or on collaborator_id.
