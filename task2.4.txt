@@ -1,0 +1,11 @@
+Scenario 1: New Vehicle Addition
+Process: A new vehicle is added to the Vehicles table with its make, model, year, and VIN.
+Outcome: The vehicle is uniquely identified by vehicle_id and vin, ready to be linked to a rental agreement.
+
+Scenario 2: Rental Agreement Updates
+Process: When a rental agreement is created, it includes a vehicle_id that links to the Vehicles table. If the rental details change, the Rental_Agreements table is updated.
+Outcome: The unique constraint on vehicle_id in Rental_Agreements ensures that each vehicle can have only one active rental agreement, maintaining the one-to-one relationship.
+
+Scenario 3: Vehicle Availability Checks
+Process: To check if a vehicle is available for rental, the system queries the Rental_Agreements table to see if there is an active agreement (where return_date is NULL).
+Outcome: If no active rental agreement exists for the vehicle, it is available for rental. The unique constraint on vehicle_id in Rental_Agreements facilitates efficient availability checks.
